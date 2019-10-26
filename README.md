@@ -13,7 +13,7 @@ Pyrite is a program that provides useful server tools for Minecraft
 
 
 ## Setting Up
-Install `Pyrite v1.1.exe` from the releases menu. Pyrite uses absolute paths instead of relative, so just place the file wherever is convenient for you. When you load Pyrite for the first time, it will create a `config.json`. Please see the Configuration section to learn more.
+Install `Pyrite v1.0.1.exe` from the releases menu. Pyrite uses absolute paths instead of relative, so just place the file wherever is convenient for you. When you load Pyrite for the first time, it will create a `config.json`. Please see the Configuration section to learn more.
 If you choose to use ngrok, you will need to create an account. To do this, go to https://ngrok.com and click 'Sign Up' in the top right corner. This should take you to the 'Setup & Installation' window. You can choose to install ngrok from here, but Pyrite will automatically install it for you if you choose not to. 
 On the dashboard ('Setup & Installation'), click 'Auth' on the left side. From here, you should see an authorization token, and this is what you will copy into the `ngrokAuthToken` field in the `config.json`. Pyrite will automatically log you in once, but if you ever need to use a different authorzation token, you will need to set `refreshNgrokLogin` to `true` in the `config.json`.
 
