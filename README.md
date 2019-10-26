@@ -1,16 +1,27 @@
 # Pyrite
 
+Pyrite is a program that provides useful server tools for Minecraft
+
+
 **Features:**
 * Easy Server Creation (Vanilla Only)
 * World Copying
 * Map Testing Mode (Clears Player Data)
 * Server Hosting using ngrok
 
+**DISCLAIMER: I am not responsible if you mess up your world files, your server files, or the directory the program is in if you don't specify the proper filenames.**
 
-# Setting Up
-Install `Pyrite v1.0.exe` from the releases menu. Pyrite uses absolute paths instead of relative, so just place the file wherever is convenient for you. When you load Pyrite for the first time, it will create a `config.json`. Please see the Configuration section to learn more.
+
+## Setting Up
+Install `Pyrite v1.1.exe` from the releases menu. Pyrite uses absolute paths instead of relative, so just place the file wherever is convenient for you. When you load Pyrite for the first time, it will create a `config.json`. Please see the Configuration section to learn more.
 If you choose to use ngrok, you will need to create an account. To do this, go to https://ngrok.com and click 'Sign Up' in the top right corner. This should take you to the 'Setup & Installation' window. You can choose to install ngrok from here, but Pyrite will automatically install it for you if you choose not to. 
 On the dashboard ('Setup & Installation'), click 'Auth' on the left side. From here, you should see an authorization token, and this is what you will copy into the `ngrokAuthToken` field in the `config.json`. Pyrite will automatically log you in once, but if you ever need to use a different authorzation token, you will need to set `refreshNgrokLogin` to `true` in the `config.json`.
+
+
+
+## Usage
+When you start the program, it will ask if you want to create a server. If you say yes, it will go through the steps to create one.  This is where you specify the server name and version. Downloading the right `.jar` file will take a while, however, so please be patient. After this, it will ask which server you want to create. If the server doesn't exist, it will complain that you don't have a batch file to start the server with. Next, it will ask if you would like to copy a world. If you say yes, it will ask you to specify a world to copy. Then it will ask if you want to enable Map Testing Mode. This clears the `advancments` folder, the `stats`, folder, the `playerdata`, folder, and then it clears the `Players` folder from the `level.dat`. When you join the world, it will be like you were never in it. Then ngrok will start, and you're done!
+
 
 
 ## Configuration
