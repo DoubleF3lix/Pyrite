@@ -43,7 +43,11 @@ def copyWorld():
         shutil.rmtree(worldToCopyDST)
     except FileNotFoundError:
         pass
-    shutil.copytree(worldToCopySRC, worldToCopyDST)
+    try:
+        shutil.copytree(worldToCopySRC, worldToCopyDST)
+    except FileNotFoundError:
+        input(f'ERROR - {worldToCopyName} doesn\'t exist.')
+        sys.exit(0)
 
 def clearWorldPlayerData(serverName):
     serverWorld = serversPath + '\\' + serverName + '\\' + 'world'
@@ -61,7 +65,8 @@ def startServer(serverName):
         os.chdir(serversPath + '\\' + serverName)
         os.system(f'start cmd /c "{batchFileName}"')
     except FileNotFoundError:
-       print(f'ERROR - You don\'t have a batch file to start your server with! Make sure {batchFileName} is in ' + serversPath + '\\' + serverName)
+        input(f'ERROR - You don\'t have a batch file to start your server with! Make sure {batchFileName} is in ' + serversPath + '\\' + serverName)
+        sys.exit(0)
 
 def hostServer():
     os.chdir(serversPath)
