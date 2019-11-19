@@ -118,44 +118,45 @@ def getConfig():
         configData = json.load(configJson)
         return configData
 
-if not os.path.isdir('C:\\Pyrite') and not os.path.exists('C:\\Pyrite\\config.json'):
-    os.mkdir('C:\\Pyrite')
-    createConfig()
-elif os.path.isdir('C:\\Pyrite') and not os.path.exists('C:\\Pyrite\\config.json'):
-    createConfig()
-else:
-    config = getConfig()
-    serversPath = config['serversPath']
-    worldsPath = config['worldsPath']
-    region = config['region']
-    batchFileName = config['batchFileName']
-    ngrokAuthToken = config['ngrokAuthToken']
-    disableNgrok = config['disableNgrok']
-    refreshNgrokLong = config['refreshNgrokLogin']
+if __name__ == "__main__:
+    if not os.path.isdir('C:\\Pyrite') and not os.path.exists('C:\\Pyrite\\config.json'):
+        os.mkdir('C:\\Pyrite')
+        createConfig()
+    elif os.path.isdir('C:\\Pyrite') and not os.path.exists('C:\\Pyrite\\config.json'):
+        createConfig()
+    else:
+        config = getConfig()
+        serversPath = config['serversPath']
+        worldsPath = config['worldsPath']
+        region = config['region']
+        batchFileName = config['batchFileName']
+        ngrokAuthToken = config['ngrokAuthToken']
+        disableNgrok = config['disableNgrok']
+        refreshNgrokLong = config['refreshNgrokLogin']
 
-setupServerMode = input('Would you like to create a server? (Y/N): ').lower().replace(' ', '')
-if setupServerMode == 'y':
-    setupServerName = input('Enter a name for your server: ')
-    setupServerVersion = input('Enter a version for your server: ').lower()
-    serverSetup(setupServerName, setupServerVersion)
+    setupServerMode = input('Would you like to create a server? (Y/N): ').lower().replace(' ', '')
+    if setupServerMode == 'y':
+        setupServerName = input('Enter a name for your server: ')
+        setupServerVersion = input('Enter a version for your server: ').lower()
+        serverSetup(setupServerName, setupServerVersion)
 
-serverName = input('Enter the server name you would like to setup: ')
-doCopyWorld = input(f'Would you like to copy a world to {serverName}? (Y/N): ').lower().replace(' ', '')
-if doCopyWorld == 'y':
-    copyWorld()
+    serverName = input('Enter the server name you would like to setup: ')
+    doCopyWorld = input(f'Would you like to copy a world to {serverName}? (Y/N): ').lower().replace(' ', '')
+    if doCopyWorld == 'y':
+        copyWorld()
 
-    mapTestingMode = input(f'Would you like to enable Map Testing Mode? (Clears all Player Data) (Y/N): ').lower().replace(' ', '')
-    if mapTestingMode == 'y':
-        clearWorldPlayerData(serverName)
+        mapTestingMode = input(f'Would you like to enable Map Testing Mode? (Clears all Player Data) (Y/N): ').lower().replace(' ', '')
+        if mapTestingMode == 'y':
+            clearWorldPlayerData(serverName)
 
-if config['disableNgrok'] == False:  
-    if not os.path.exists(f'{serversPath}\\ngrok.exe'):
-        downloadNgrok()  
-    hostServer()
-    try:
-        getServerIP()
-        print('Done! The IP to your server has been copied to your clipboard.')
-    except ConnectionError:
-        print('ERROR - ngrok closed before the server IP could be grabbed!')
+    if config['disableNgrok'] == False:  
+        if not os.path.exists(f'{serversPath}\\ngrok.exe'):
+            downloadNgrok()  
+        hostServer()
+        try:
+            getServerIP()
+            print('Done! The IP to your server has been copied to your clipboard.')
+        except ConnectionError:
+            print('ERROR - ngrok closed before the server IP could be grabbed!')
 
-startServer(serverName)
+    startServer(serverName)
