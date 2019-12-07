@@ -114,9 +114,9 @@ def copyServerIP():
 def downloadNgrok(serversPath):
     print('Please wait while ngrok is installed')
     urllib.request.urlretrieve('https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip', f'{serversPath}\\ngrok.zip')
-    with zipfile.ZipFile(f'{serversPath}\\ngrok.zip', 'r') as ngrokZip:
+    with zipfile.ZipFile(f'{serversPath}/ngrok.zip', 'r') as ngrokZip:
         ngrokZip.extractall(serversPath)
-    os.remove(f'{serversPath}\\ngrok.zip')
+    os.remove(f'{serversPath}/ngrok.zip')
 
 def createConfig():
     with open('C:/Pyrite/config.json', 'w') as configFile:
@@ -162,7 +162,7 @@ def main():
     if not os.path.isdir('C:/Pyrite') and not os.path.exists('C:/Pyrite/aliases.json'):
         os.mkdir('C:/Pyrite')
         createAliases()
-    elif os.path.isdir('C:/Pyrite') and not os.path.exists('C:\\Pyrite\\aliases.json'):
+    elif os.path.isdir('C:/Pyrite') and not os.path.exists('C:/Pyrite/aliases.json'):
         createAliases()
 
     while True:
