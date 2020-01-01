@@ -28,7 +28,6 @@ In this example, I will have 'Survival' as my server name.
 
 To run the server, use 
 ```startServer "Survival"```
-
 The quotes around the server name is important. 
 
 If I want to copy a world to it, I would use 
