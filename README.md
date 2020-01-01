@@ -22,17 +22,12 @@ This command is used to set various config variables. See the configuration sect
 
 ### 'startServer':
 This command can start a pre-existing server. If `ngrokDisabled` is set to false, running this command will also start ngrok.
-
 The config variable `serversPath` must be specified for this command to work.
+
 In this example, I will have 'Survival' as my server name.
+To run the server, use ```startServer "Survival"```. The quotes around the server name is important. 
 
-To run the server, use 
-```startServer "Survival"```
-The quotes around the server name is important. 
-
-If I want to copy a world to it, I would use 
-```startServer "Survival" copyworld="My Survival World"```
-
+If I want to copy a world to it, I would use ```startServer "Survival" copyworld="My Survival World"```.
 This has to have `worldsPath` set in the config. Again, the quotes around the world name is important. 
 
 To remove the player data from said world, add `.cpd` to the `copyworld` parameter, like so:
