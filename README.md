@@ -21,6 +21,7 @@ The following section will explain the different commands, what they are for, an
 This command is used to set various config variables. See the configuration section for more info.
 
 ### 'startServer':
+```startServer [server name] (copyworld="My World")(.cpd)```
 This command can start a pre-existing server. If `ngrokDisabled` is set to false, running this command will also start ngrok.
 The config variable `serversPath` must be specified for this command to work.
 
@@ -34,4 +35,7 @@ To remove the player data from said world, add `.cpd` to the `copyworld` paramet
 ```startServer "Survival" copyworld="My Survival World".cpd```
 
 ## 'createServer':
+This command will create a vanilla server. See the bottom of this readme for a list of supported modpacks.
+The config variables `serversPath` must be specified for this command to work.
+
 
