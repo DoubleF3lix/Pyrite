@@ -36,7 +36,8 @@ To remove the player data from said world, add `.cpd` to the end of the `copywor
 ```startServer "Survival" copyworld="My Survival World".cpd```
 
 ## 'createServer':
-```createServer [name] [version]
+```createServer [name] [version]```
+
 This command will create a vanilla server. See the bottom of this readme for a list of supported modpacks.
 The config variables `serversPath` must be specified for this command to work.
 
