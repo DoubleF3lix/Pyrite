@@ -16,26 +16,27 @@ Pyrite v2 has a terminal like interface instead of Pyrite v1's set series of inp
 The following section will explain the different commands, what they are for, and how to use them.
 
 ### 'config':
-```config [value] [set value]```
+```config [variable] [value]```
 
 This command is used to set various config variables. See the configuration section for more info.
 
 ### 'startServer':
-```startServer [server name] (copyworld="My World")(.cpd)```
+```startServer [name] (copyworld="My World")(.cpd)```
 
 This command can start a pre-existing server. If `ngrokDisabled` is set to false, running this command will also start ngrok.
 The config variable `serversPath` must be specified for this command to work.
 
-In this example, I will have 'Survival' as my server name.
+In this example, I will have "Survival" as my server name.
 To run the server, use ```startServer "Survival"```. The quotes around the server name is important. 
 
-If I want to copy a world to it, I would use ```startServer "Survival" copyworld="My Survival World"```.
+To copy a world to your server, use the `copyworld` parameter, like so: ```startServer "Survival" copyworld="My Survival World"```.
 This has to have `worldsPath` set in the config. Again, the quotes around the world name is important. 
 
-To remove the player data from said world, add `.cpd` to the `copyworld` parameter, like so:
+To remove the player data from said world, add `.cpd` to the end of the `copyworld` parameter:
 ```startServer "Survival" copyworld="My Survival World".cpd```
 
 ## 'createServer':
+```createServer [name] [version]
 This command will create a vanilla server. See the bottom of this readme for a list of supported modpacks.
 The config variables `serversPath` must be specified for this command to work.
 
