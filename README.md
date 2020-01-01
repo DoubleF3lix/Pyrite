@@ -11,7 +11,7 @@ Pyrite is a program that provides useful server tools for Minecraft
 
 **DISCLAIMER: I am not responsible if you mess up your world files, your server files, or the directory the program is in if you don't specify the proper filenames.**
 
-## Usage:
+## Commands:
 Pyrite v2 has a terminal like interface instead of Pyrite v1's set series of inputs. 
 The following section will explain the different commands, what they are for, and how to use them.
 
@@ -56,3 +56,4 @@ This command copies the IP assigned to your server when you use ngrok. Ngrok mus
 This command allows you to change commands to whatever you like. Using ```alias createServer cs``` will allow you to create a server by using ```cs [name] [version]```. You can also set config variables by using ```alias [variable] [name]```. See the configuration section for more info.
 
 
+## Configuration
